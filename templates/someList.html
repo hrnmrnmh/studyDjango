@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %} some_List {% endblock %}
+{% block title %}some_list{% endblock %}
 
 {% block content %}
-    <h1>aaaaaaaa</h1>
     <ul>
-        {% for l in someList %}
+        {% for l in some_list %}
             <li>{{ l }}</li>
         {% endfor %}
     </ul>
