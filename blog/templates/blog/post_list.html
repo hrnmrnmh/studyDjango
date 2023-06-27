@@ -4,7 +4,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <p>{{ post.title }}</p>
+        <p><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
         <p>{{ post.author }}</p>
     {% endfor %}
 {% endblock %}
