@@ -15,6 +15,9 @@ def post_detail(request, pk):
 
 
 def post_new(request):
+    if not request.user.is_authenticated:
+        return redirect('/admin/')
+
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
