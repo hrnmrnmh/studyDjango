@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import Http404, render, get_object_or_404, redirect
 from blog.models import Post
 from django.utils import timezone
 from .forms import PostForm
@@ -11,6 +11,12 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    if request.user.is_authenticated:
+        return render(request, 'blog/post_detail.html', {'post': post})
+    else:
+        if (not post.published_date) or timezone.now() < post.published_date:
+            raise Http404
+
     return render(request, 'blog/post_detail.html', {'post': post})
 
 
@@ -44,3 +50,8 @@ def post_edit(request, pk: int):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def post_draft_list(request):
+    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
+    return render(request, 'blog/post_draft_list.html', {'posts': posts})
