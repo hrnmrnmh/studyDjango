@@ -59,6 +59,5 @@ def post_draft_list(request):
 
 def post_publish(request, pk: int):
     post = get_object_or_404(Post, pk=pk)
-    post.published_date = timezone.now()
-    post.save()
+    post.publish()
     return redirect('post_detail', pk=post.pk)
