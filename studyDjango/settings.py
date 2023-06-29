@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'study.apps.StudyConfig',
     'blog.apps.BlogConfig',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
