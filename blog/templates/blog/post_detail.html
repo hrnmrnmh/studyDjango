@@ -21,7 +21,7 @@
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
                 <span class="glyphicon glyphicon-pencil"></span>
             </a>
-            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}">
+            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}" onclick="return confirm('delete??')">
                 <span class="glyphicon glyphicon-remove"></span>
             </a>
         {% endif %}
