@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}post_edit{% endblock %}
+
 {% block content %}
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}

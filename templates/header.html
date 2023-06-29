@@ -1,9 +1,16 @@
 <header>
     <div class="page-header">
-        {% if request.user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-        {% endif %}
-        <h1><a href="/">aohno Blog</a></h1>
+        <h4><a href="/">aohno Blog</a></h4>
+        <nav><ul>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'post_new' %}" class="top-menu">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a></li>
+                <li><a href="{% url 'post_draft_list' %}" class="top-menu">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a></li>
+            {% endif %}
+            <li><a href="https://github.com/hrnmrnmh/studyDjango">github</a></li>
+        </ul></nav>
     </div>
 </header>
