@@ -1,3 +1,9 @@
+a[target="_blank"]:after {
+  font-weight: 600;
+  content: "⇗";
+  margin-left: 3px;
+}
+
 header {
   margin-top: 7px;
   max-width: 700px;
@@ -28,7 +34,6 @@ header {
         font-size: large;
         list-style: none;
       }
-
     }
   }
 }
@@ -45,6 +50,7 @@ footer {
   max-width: 700px;
 
   #copyright {
+    font-size: 0.8rem;
     text-align: center;
     width: 100%;
   }

@@ -35,7 +35,9 @@
                         <span class="glyphicon glyphicon-remove"></span>
                     </a>
                 </li>
-                <li><a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a></li>
+                {% if not post.published_date %}
+                    <li><a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a></li>
+                {% endif %}
             </ul>
 
 
