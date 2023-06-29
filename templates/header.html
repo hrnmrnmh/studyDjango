@@ -1,7 +1,7 @@
 <header>
-    <div class="page-header">
-        <h4><a href="/">aohno Blog</a></h4>
-        <nav><ul>
+    <h4 id="header-logo"><a href="/">aohno Blog</a></h4>
+    <nav>
+        <ul>
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'post_new' %}" class="top-menu">
                     <span class="glyphicon glyphicon-plus"></span>
@@ -11,6 +11,6 @@
                 </a></li>
             {% endif %}
             <li><a href="https://github.com/hrnmrnmh/studyDjango">github</a></li>
-        </ul></nav>
-    </div>
+        </ul>
+    </nav>
 </header>

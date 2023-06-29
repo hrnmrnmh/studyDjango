@@ -14,10 +14,12 @@
     <title>{% block title %}{% endblock %} | aohno blog study python and Django</title>
 </head>
 <body>
-    {% include "header.html" %}
+{% include "header.html" %}
 
+<section id="content">
     {% block content %}{% endblock %}
+</section>
 
-    {% include "footer.html" %}
+{% include "footer.html" %}
 </body>
 </html>
