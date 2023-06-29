@@ -1,19 +1,36 @@
-.post{
-  padding: 7px;
-  background-color: #d7fbff;
-}
+section#content {
+  .post {
+    border: solid #428bca;
+    padding: 7px;
+    background-color: #e4eeff;
+  }
 
-.posts{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  #post_operation {
+    ul {
+      margin-block-start: 0;
+      padding-inline-start: 0;
 
-  article{
-    border: solid aqua;
-    margin: 7px;
-    padding: 3px;
-    min-width: 150px;
+      li {
+        margin: 3px;
+        padding: 3px;
+        display: inline-block;
+        list-style: none;
+      }
+    }
+  }
 
+  .posts {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    article {
+      border: solid #428bca;
+      margin: 7px;
+      padding: 3px;
+      min-width: 150px;
+
+    }
   }
 }
