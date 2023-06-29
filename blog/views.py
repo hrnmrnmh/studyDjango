@@ -5,12 +5,24 @@ from .forms import PostForm
 
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    hello_post = Post.objects.filter(title='hello_post').order_by('published_date').last()
+    posts = Post.objects.filter(published_date__lte=timezone.now()).exclude(title='hello_post').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts, 'hello_post': hello_post})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    if request.user.is_authenticated:
+        return render(request, 'blog/post_detail.html', {'post': post})
+    else:
+        if (not post.published_date) or timezone.now() < post.published_date:
+            raise Http404
+
+    return render(request, 'blog/post_detail.html', {'post': post})
+
+
+def post_hello(request):
+    post = Post.objects.filter(title='hello_post').order_by('published_date').last()
     if request.user.is_authenticated:
         return render(request, 'blog/post_detail.html', {'post': post})
     else:

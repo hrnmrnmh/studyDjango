@@ -8,6 +8,21 @@
 {% endblock %}
 
 {% block content %}
+    <div class="post">
+        <p>{{ hello_post.text|linebreaksbr }}</p>
+        {% if request.user.is_authenticated %}
+        <section id="post_operation">
+            <ul>
+                <li>
+                    <a class="btn btn-default" href="{% url 'post_edit' pk=hello_post.pk %}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    {% endif %}
+
+    </div>
     <div class="posts">
         {% for post in posts %}
             <article>
