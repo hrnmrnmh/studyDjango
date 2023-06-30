@@ -124,9 +124,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media/'
 STATIC_ROOT = Path(BASE_DIR / 'static')
-MEDIA_ROOT = Path(BASE_DIR / 'media')
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -148,3 +146,5 @@ MDEDITOR_CONFIGS = {
     }
 }
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+MEDIA_ROOT = Path(BASE_DIR / 'uploads')
+MEDIA_URL = '/media/'
