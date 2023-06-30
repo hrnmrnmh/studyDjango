@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
 
 {% block title %}post_edit{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% sass_src 'blog.scss' %}">
+{% endblock %}
 
 {% block content %}
     <h2>New post</h2>
