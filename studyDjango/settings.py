@@ -142,4 +142,9 @@ SASS_TEMPLATE_EXTS = ['.html', '.haml']
 SASS_PROCESSOR_ENABLED = True
 
 # markdown
+MDEDITOR_CONFIGS = {
+    'default': {
+        'language': 'en',
+    }
+}
 X_FRAME_OPTIONS = 'SAMEORIGIN'

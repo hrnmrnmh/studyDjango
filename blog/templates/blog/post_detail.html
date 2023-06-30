@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load sass_tags %}
+{% load markdown_extras %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -18,7 +19,8 @@
         {% endif %}
 
         <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        {{ post.text | markdown | safe }}
+
     </div>
 
     {% if request.user.is_authenticated %}
