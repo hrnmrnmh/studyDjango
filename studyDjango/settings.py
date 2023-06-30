@@ -143,5 +143,3 @@ SASS_PROCESSOR_ENABLED = True
 
 # markdown
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-MEDIA_ROOT = Path(BASE_DIR / 'uploads')
-MEDIA_URL = '/media/'
