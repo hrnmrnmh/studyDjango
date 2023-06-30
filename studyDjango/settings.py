@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'study.apps.StudyConfig',
     'blog.apps.BlogConfig',
     'sass_processor',
+    'mdeditor',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,7 @@ SASS_OUTPUT_STYLE = 'compressed'
 SASS_TEMPLATE_EXTS = ['.html', '.haml']
 SASS_PROCESSOR_ENABLED = True
 
+# markdown
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+MEDIA_ROOT = Path(BASE_DIR / 'uploads')
+MEDIA_URL = '/media/'
