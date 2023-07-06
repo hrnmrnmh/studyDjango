@@ -3,6 +3,10 @@ section#content {
     border: solid #428bca;
     padding: 7px;
     background-color: #e4eeff;
+    img {
+      max-width: 60%;
+      max-height: 40%;
+    }
   }
 
   #post_operation {
